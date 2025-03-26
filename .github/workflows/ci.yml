@@ -1,0 +1,33 @@
+name: CI
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 'lts/*'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install
+      - name: Lint JS
+        run: yarn run lint --no-fix --max-warnings 0
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 'lts/*'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install
+      - name: Build
+        run: yarn build
