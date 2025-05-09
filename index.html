@@ -28,5 +28,18 @@
       <button>A button that doesn't trigger</button>
     </clickable-card>
   </section>
+
+
+  <section>
+    <h2>Character counter</h2>
+
+    <character-counter data-character-counter-template="Characters {{current}}/{{total}} ({{remaining}} remaining)"
+                       data-character-counter-limit-message="Limit reached!">
+      <label for="textArea">Type to see the character counter change</label>
+      <textarea name="textArea" id="textArea" maxlength="50" data-character-counter-ref="input"></textarea>
+      <span data-character-counter-ref="output">0/50 characters</span>
+      <span data-character-counter-ref="error"></span>
+    </character-counter>
+  </section>
 </body>
 </html>

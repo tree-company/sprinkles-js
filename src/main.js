@@ -1,3 +1,4 @@
-import { ClickableCardElement } from "./elements";
+import { ClickableCardElement, CharacterCounterElement } from "./elements";
 
+CharacterCounterElement.register();
 ClickableCardElement.register();
