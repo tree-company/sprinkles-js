@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.0 - 2025/10/17
+* Added a new `FormAutosubmitElement`
+* Added a `debounce` function (used in the `FormAutosubmitElement` that is also exported)
+
 ## V0.2.1
 * Fixed a broken release in v0.2.0
 
