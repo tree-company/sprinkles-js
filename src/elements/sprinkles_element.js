@@ -24,7 +24,7 @@ export default class SprinklesElement extends HTMLElement {
    *
    * For each event a listener will be added when the elements connects (and removed when it disconnects)
    *
-   * @type {{ [eventName: string]: string | { method: string; ref?: string, options?: boolean | AddEventListenerOptions; immediate?: boolean } | string[] | { method: string; ref?: string, options?: boolean | AddEventListenerOptions; immediate?: boolean }[] }}
+   * @type {{ [eventName: string]: string | { method: string; ref?: string, options?: boolean | AddEventListenerOptions; immediate?: boolean, element?: HTMLElement | () => HTMLElement } | string[] | { method: string; ref?: string, options?: boolean | AddEventListenerOptions; immediate?: boolean, element?: HTMLElement | () => HTMLElement }[] }}
    */
   static events = {};
 
@@ -105,6 +105,9 @@ export default class SprinklesElement extends HTMLElement {
       // Otherwise setting `element` will mess with other instances of the same element
       setting =
         typeof setting === "string" ? { method: setting } : { ...setting };
+      if (typeof setting.element === "function") {
+        setting.element = setting.element.call();
+      }
       setting.element ||= setting["ref"] ? this.refs[setting["ref"]] : this;
       setting.immediate ||= false;
       setting.callback = this[setting.method].bind(this);
