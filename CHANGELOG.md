@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v0.3.1 - 2026/01/09
 * Allow element in events to be a function that returns an element
 
 ## v0.3.0 - 2025/10/17
