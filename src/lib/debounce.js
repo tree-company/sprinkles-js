@@ -31,11 +31,19 @@ export function debounce(callback, wait) {
   };
 
   debounced.trigger = () => {
+    debounced.clear();
+    run();
+  };
+
+  debounced.flush = () => {
+    if (timeout) debounced.trigger();
+  };
+
+  debounced.clear = () => {
     if (timeout) {
       clearTimeout(timeout);
       timeout = null;
     }
-    run();
   };
 
   return debounced;
