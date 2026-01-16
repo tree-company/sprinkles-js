@@ -42,6 +42,7 @@ export default class SprinklesElement extends HTMLElement {
   refs = {};
 
   connectedCallback() {
+    this.beforeConnected();
     this.#detectRefs();
     this.#bindEvents();
     this.afterConnected();
@@ -50,12 +51,15 @@ export default class SprinklesElement extends HTMLElement {
   disconnectedCallback() {
     this.beforeDisconnect();
     this.#unbindEvents();
+    this.afterDisconnect();
   }
 
   // Callbacks
+  beforeConnected() {}
   afterConnected() {}
 
   beforeDisconnect() {}
+  afterDisconnect() {}
 
   // Setup
   #detectRefs() {
