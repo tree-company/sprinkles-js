@@ -1,5 +1,8 @@
 # Changelog
 
+## v0.3.2 - 2026/01/30
+* The debounce in `FormAutosubmitElement` can now be configured through data attributes
+
 ## v0.3.1 - 2026/01/09
 * Allow element in events to be a function that returns an element
 
