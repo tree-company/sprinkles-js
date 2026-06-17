@@ -69,5 +69,5 @@ const ANDROID_KEYS = [
 
 // NOTE: Certain android devices always send an event with a special key and/or keyCode `229`
 function isAndroidKey(event) {
-  return ANDROID_KEYS.includes(event.key) || event.keyCode == 229;
+  return ANDROID_KEYS.includes(event.key) || event.keyCode === 229;
 }
