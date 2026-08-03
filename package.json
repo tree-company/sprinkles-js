@@ -33,6 +33,6 @@
     "playwright": "^1.61.1",
     "prettier": "^3.9.4",
     "stylelint": "^16.26.1",
-    "vite": "^8.1.2"
+    "vite": "^8.1.5"
   }
 }
